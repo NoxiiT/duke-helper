@@ -346,7 +346,7 @@ export function updateBladeHealth(bladeEntity) {
 }
 
 export function renderStatusOverlay(phase, paused, kills, currentTarget, loot, startedDate, position = 1, totalPausedDuration = 0, pauseTime = null) {
-    if (!phase || !kills || !currentTarget || !startedDate) return;
+    if (!phase || !kills || !currentTarget) return;
 
     let now = Date.now();
     let elapsedMs;

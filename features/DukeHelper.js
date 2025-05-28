@@ -31,8 +31,8 @@ let lockTargetYaw = 0, lockTargetPitch = 0;
 let lockStartTime = 0, lockDuration = 200; // ms
 
 let state = {
-    startScriptDate: null,
-    kills: { duke: 4, blade: 0 },
+    startScriptDate: Date.now(),
+    kills: { duke: 0, blade: 0 },
     loot: {
         "MAGMA URCHIN": {
             name: "Urchin",
@@ -118,6 +118,9 @@ register("command", (name, role) => {
             chatMessage("&4/duke role leader - Sets the role as leader");
             chatMessage("&4/duke role member - Sets the role as member");
             chatMessage("&4/duke help - Shows this message");
+            chatMessage("&4/dukesession pause - Pauses the session");
+            chatMessage("&4/dukesession resume - Resumes the session");
+            chatMessage("&4/dukesession reset - Resets the session");
             chatMessage("&4/dukedebug setdukekilled <number> - Sets the number of Duke killed");
             ChatLib.chat("&c -------------------------");
             break;
@@ -386,6 +389,7 @@ register("chat", (event) => {
             const pausedDuration = Date.now() - state.pauseTime;
             state.totalPausedDuration += pausedDuration; // Update total paused duration
             state.pauseTime = null; // Reset pause time
+            state.lastActionTime = Date.now(); // Update last action
             chatMessage("&aSession resumed after BladeSoul kill.");
         }
     } else if (msg.includes("BARBARIAN DUKE X DOWN!")) {
@@ -406,6 +410,7 @@ register("chat", (event) => {
             const pausedDuration = Date.now() - state.pauseTime;
             state.totalPausedDuration += pausedDuration; // Update total paused duration
             state.pauseTime = null; // Reset pause time
+            state.lastActionTime = Date.now(); // Update last action
             chatMessage("&aSession resumed after Duke kill.");
         }
     }
