@@ -13,14 +13,13 @@ Duke Helper is a powerful [ChatTriggers](https://chattriggers.com/) module desig
 - **Session Stats:** Displays session duration, kills, loot, and more in a customizable overlay.
 
 ### Dungeon Utilities
-- **Hover Secrets:** Instantly clicks chests and (optionally) skulls when you hover over them in dungeons.
-- **Auto TNT:** Automatically places TNT on bombable walls in dungeons.
+- **Hover Secrets:** Instantly clicks chests and (maybe later) skulls when you hover over them in dungeons.
+- **Auto TNT:** Automatically places TNT on bombable walls in dungeons when punched.
 - **Left Click Etherwarp:** Allows left-clicking to use Etherwarp abilities.
 - **Pickaxe Swap Ghostblocks:** Quickly creates ghost blocks using a configurable pickaxe swap key.
-- **Fire Freeze Timer:** Alerts or automatically uses Fire Freeze Staff at the right time in boss fights.
+- **Fire Freeze Timer:** Alerts or automatically uses Fire Freeze Staff at the right time in boss fights (M3).
 - **Auto GFS:** Automatically refills Spirit Leaps and Ender Pearls in boss rooms.
 - **No Particles in Dungeon:** Optionally disables most particles in dungeons for better visibility.
-- **Auto Close Chests:** (Optional) Automatically closes chests in dungeons.
 
 ### General Utilities
 - **ESP Boxes:** Highlights Duke and Bladesoul with ESP boxes for easy tracking.
@@ -74,4 +73,4 @@ For issues, suggestions, or updates, visit the [GitHub repository](https://githu
 
 ---
 
-Enjoy faster, smarter, and more efficient boss runs and dungeon experiences with Duke Helper!
+Enjoy faster, smarter, and more efficient duke runs and dungeon experiences with Duke Helper!
