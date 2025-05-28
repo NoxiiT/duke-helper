@@ -1,8 +1,8 @@
 import Settings from "../config.js";
 import { renderDukeHealth, updateDukeHealth, rightClick, renderCenter, chatMessage, playSounds, changeDukeFound, renderStatusOverlay, changeBladeFound, renderBladeHealth, updateBladeHealth } from "../utils.js"
 import { TASController } from './TASController.js';
-import request from "requestV2";
 import RenderLibV2 from "../../RenderLibV2/index.js";
+import axios from "axios";
 
 // Quand le Duke est trouvé, on affiche et met à jour sa santé
 register("renderOverlay", renderDukeHealth);
@@ -648,18 +648,23 @@ register("command", (arg) => {
 }).setName("dukesession", true).setTabCompletions(["pause", "resume", "reset"]);
 
 export function initialize() {
-    const url = `https://api.hypixel.net/skyblock/bazaar/`;
-    request({
-        url: url,
-        json: true
-    }, (err, resp, data) => {
-        if (!err && data && data.products) {
-            let price = data.products["MAGMA_URCHIN"].sell_summary[0].pricePerUnit;
-            state.loot["URCHIN"].price = price;
-            price = data.products["LEATHER_CLOTH"].sell_summary[0].pricePerUnit;
-            state.loot["LEATHER_CLOTH"].price = price;
-        }
-    });
-    
     chatMessage("&aDuke Helper Loaded! Use /duke to start");
+}
+
+export function checkForUpdates() {
+    axios.get("https://raw.githubusercontent.com/NoxiiT/duke-helper/main/metadata.json")
+        .then(response => {
+            const metadata = response.data;
+            const downloadUrl = "https://github.com/NoxiiT/duke-helper"
+            const currentVersion = JSON.parse(FileLib.read("Duke Helper", "metadata.json")).version;
+            if (metadata.version !== currentVersion) {
+                chatMessage(`A new version of Duke Helper is available: ${metadata.version}`);
+                chatMessage(`Download it from: ${downloadUrl}`);
+            } else {
+                chatMessage("Duke Helper is up to date.");
+            }
+        })
+        .catch(err => {
+            console.error("Failed to fetch metadata:", err);
+        });
 }

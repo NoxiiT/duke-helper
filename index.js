@@ -5,7 +5,7 @@ import "./features/ZeroPingEtherwarp"
 import "./features/FireFreezeTimer"
 import "./features/SwapGhostblocks"
 import "./features/LeftclickEtherwarp"
-import { initialize } from "./features/DukeHelper"
+import { initialize, checkForUpdates } from "./features/DukeHelper"
 import "./features/HoverSecrets"
 import "./features/AutoTNT"
 import "./features/NoParticleInDungeon"
@@ -51,3 +51,4 @@ register("command", () => {
 }).setName("stopParticleLoop");
 
 initialize();
+checkForUpdates();
