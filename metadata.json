@@ -2,7 +2,7 @@
     "$schema": "../CTAutocomplete/schema.json",
     "name": "Duke Helper",
     "creator": "NotEnoughSecrets",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "a duke helper for monkeyz",
     "entry": "index.js",
     "requires": [

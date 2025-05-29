@@ -108,6 +108,15 @@ config
             return data.displayHealth
         }
     })
+    .addSelection({
+        configName: "infoDisplayPosition",
+        title: "Info Display Position",
+        description: "Position of the info display",
+        category: "General",
+        subcategory: "Display",
+        options: ["Top Left", "Top Right", "Bottom Left", "Bottom Right", "Center"],
+        value: 1,
+    })
     .addSwitch({
         configName: "enableEspDuke",
         title: "ESP Duke",

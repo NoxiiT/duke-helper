@@ -83,7 +83,7 @@ register("renderOverlay", () => {
         state.kills.duke % 4 === 0 ? "BLADE" : "DUKE",
         state.loot,
         state.startScriptDate,
-        1,
+        Settings().infoDisplayPosition,
         state.totalPausedDuration, // pass paused duration
         state.pauseTime // pass pauseTime
     );

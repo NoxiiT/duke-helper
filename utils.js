@@ -363,8 +363,8 @@ export function renderStatusOverlay(phase, paused, kills, currentTarget, loot, s
     const positions = [
         { x: 10, y: 10 },                                                               // Haut gauche
         { x: Renderer.screen.getWidth() - 160, y: 10 },                                 // Haut droit
-        { x: 10, y: Renderer.screen.getHeight() - 100 },                                // Bas gauche
-        { x: Renderer.screen.getWidth() - 160, y: Renderer.screen.getHeight() - 100 },  // Bas droit
+        { x: 10, y: Renderer.screen.getHeight() - 160 },                                // Bas gauche
+        { x: Renderer.screen.getWidth() - 160, y: Renderer.screen.getHeight() - 160 },  // Bas droit
         { x: Renderer.screen.getWidth() / 2 - 100, y: 35 }                              // Centre haut
     ];
 
